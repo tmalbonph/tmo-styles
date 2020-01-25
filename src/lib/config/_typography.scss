@@ -1,0 +1,79 @@
+@import '~@angular/material/theming';
+@import 'base-font-size';
+@import '../sass-utilities';
+
+/// Font-families
+
+// Headings should use Tele-Grotesk-Next
+$heading-font: Tele-Grotesk-Next, Arial, Helvetica, 'Helvetica Neue', sans-serif;
+// All others should use the system default font
+$body-font: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica,
+  Arial, sans-serif;
+
+/// Font sizes
+// $base-font-size is 16px (defined in separate _base-font-size file to prevent
+// circular references. This should be used/inherited most of the time.
+$small-font-size: rem(14px);
+$tiny-font-size: rem(12px);
+$legal-font-size: rem(10px);
+
+// These variables are just meant to clarify their application in
+// day-one-typography below, they should not be used anywhere else.
+// Order: font-size, line-height, font-weight, font-family, letter-spacing
+$mat-heading-1-font-config: mat-typography-level(
+  rem(72px),
+  rem(72px),
+  800,
+  $heading-font,
+  rem(-1.45px)
+);
+
+$mat-heading-2-font-config: mat-typography-level(
+  rem(56px),
+  rem(56px),
+  800,
+  $heading-font,
+  rem(-1.1px)
+);
+
+$mat-heading-3-font-config: mat-typography-level(
+  rem(48px),
+  rem(52px),
+  800,
+  $heading-font,
+  rem(-0.4px)
+);
+
+$mat-heading-4-font-config: mat-typography-level(
+  rem(40px),
+  rem(44px),
+  800,
+  $heading-font,
+  rem(-0.22px)
+);
+
+$mat-body-font-config: mat-typography-level(
+  $base-font-size,
+  $base-font-size,
+  normal,
+  $body-font
+);
+
+$mat-button-font-config: mat-typography-level(
+  $base-font-size,
+  $base-font-size,
+  normal,
+  $body-font
+);
+
+// Angular Material typography configuration
+// https://material.angular.io/guide/typography
+$day-one-typography: mat-typography-config(
+  $font-family: $body-font,
+  $headline: $mat-heading-1-font-config,
+  $title: $mat-heading-2-font-config,
+  $subheading-2: $mat-heading-3-font-config,
+  $subheading-1: $mat-heading-4-font-config,
+  $body-1: $mat-body-font-config,
+  $button: $mat-button-font-config
+);

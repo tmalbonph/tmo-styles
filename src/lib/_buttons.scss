@@ -1,0 +1,320 @@
+// Button styles and functionality are mostly from Angular Material -
+// this file contains TMO theme modifications and helpers
+
+@import 'variables';
+
+@mixin material-caret-right {
+  @extend %material-icons;
+  content: 'keyboard_arrow_right';
+  font-size: 24px;
+}
+
+$caret-content: '\203A';
+$button-horizontal-padding: 2rem;
+$default-button-height: 48px;
+
+// Add right caret on hover - will only work
+// on mat-button styles, because of the selectors
+@mixin mat-button-hidden-caret($horiz-padding) {
+  $caret-width: 1rem;
+
+  .mat-button-wrapper {
+    padding-right: $caret-width/2;
+    padding-left: $caret-width/2;
+    transition: padding 0.3s;
+
+    &::after {
+      content: $caret-content;
+      opacity: 0;
+      position: absolute;
+      right: $horiz-padding + 1rem;
+      transition: right 0.3s, opacity 0.3s;
+      text-align: right;
+      width: $caret-width;
+      height: 100%;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    .mat-button-wrapper {
+      padding-right: $caret-width;
+      padding-left: 0;
+
+      &::after {
+        opacity: 1;
+        right: $button-horizontal-padding;
+      }
+    }
+  }
+
+  // Full-width variation
+  &.full-width,
+  &.fixed-width {
+    .mat-button-wrapper {
+      padding-right: 0;
+      padding-left: 0;
+
+      &::after {
+        margin-left: -0.5rem;
+        position: relative;
+        right: 0;
+        transition: margin 0.3s, opacity 0.3s;
+        width: $caret-width;
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      .mat-button-wrapper {
+        padding-right: 0;
+        padding-left: 0;
+
+        &::after {
+          margin-left: 0.5rem;
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+// In the teriary style, the caret is always there,
+// but moves 4 pixels over on hover
+@mixin mat-button-nudged-caret($horiz-padding) {
+  $caret-width: 0.25rem;
+  $caret-offset: 0.2rem;
+
+  .mat-button-wrapper {
+    &::after {
+      content: $caret-content;
+      margin-left: $caret-offset;
+      margin-right: $caret-width;
+      transition: margin 0.3s;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    .mat-button-wrapper::after {
+      margin-left: $caret-offset + $caret-width;
+      margin-right: 0;
+    }
+  }
+}
+
+/*** Basic button styles ***/
+button,
+a {
+  &.mat-button,
+  &.mat-flat-button,
+  &.mat-stroked-button {
+    border-radius: 0;
+    transition: background-color 0.3s;
+  }
+}
+
+/*** CTA button styles ***/
+button,
+a {
+  &.cta-button {
+    font-weight: bold;
+    height: $default-button-height;
+    line-height: $default-button-height;
+    min-width: 120px;
+    margin-bottom: 1rem;
+    padding: 0 $button-horizontal-padding;
+
+    &.mat-button {
+      min-width: initial;
+      padding: 0;
+
+      &:not([disabled]) {
+        @include mat-button-nudged-caret($button-horizontal-padding);
+      }
+    }
+
+    &.mat-stroked-button,
+    &.mat-flat-button {
+      &:not([disabled]) {
+        @include mat-button-hidden-caret($button-horizontal-padding);
+      }
+    }
+
+    &.cta-button-small {
+      font-size: $small-font-size;
+    }
+
+    &.cta-button-large {
+      height: rem(56px);
+      line-height: rem(56px);
+    }
+  }
+
+  &.mat-button:hover .mat-button-focus-overlay {
+    opacity: 0;
+  }
+
+  &.full-width {
+    width: 100%;
+  }
+
+  &.inline-button {
+    height: inherit;
+    line-height: inherit;
+    margin-bottom: 0;
+
+    .mat-button-wrapper {
+      height: inherit;
+      line-height: inherit;
+    }
+  }
+}
+
+/*** Block button style ***/
+.button-block-group {
+  display: flex;
+  flex-direction: column;
+}
+
+button,
+a {
+  &.button-block {
+    background-color: $tmo-gray10;
+    border-radius: 0;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: $spacing-xxs;
+    padding: $spacing-xs $spacing-sm;
+
+    &::after {
+      @include material-caret-right;
+      position: absolute;
+      right: 2rem;
+    }
+
+    &:hover,
+    &:active {
+      background-color: $tmo-magenta-brand;
+      color: $tmo-white;
+      transition: background-color 0.3s, color 0.3s;
+    }
+  }
+}
+
+/*** Angular Material - default color adjustments ***/
+.mat-button,
+.mat-icon-button,
+.mat-stroked-button {
+  &,
+  &.mat-primary,
+  &.mat-accent,
+  &.mat-warn {
+    &[disabled] {
+      border-color: rgba($tmo-black, 0.12);
+    }
+  }
+}
+
+.tmo-dark-theme {
+  .mat-button,
+  .mat-icon-button,
+  .mat-stroked-button {
+    &,
+    &.mat-primary,
+    &.mat-accent,
+    &.mat-warn {
+      &[disabled] {
+        border-color: rgba($tmo-white, 0.12);
+      }
+    }
+  }
+
+  .mat-flat-button {
+    &.mat-primary {
+      color: $tmo-magenta-brand;
+    }
+  }
+}
+
+.mat-flat-button,
+.mat-raised-button,
+.mat-fab,
+.mat-mini-fab {
+  &.mat-primary {
+    background-color: $tmo-black;
+
+    &:hover:not([disabled]) {
+      background-color: $tmo-gray80;
+    }
+
+    &:focus,
+    &:active {
+      background-color: $tmo-gray85;
+    }
+
+    @include for-dark-theme {
+      &:hover:not([disabled]) {
+        background-color: $tmo-gray10;
+      }
+
+      &:focus,
+      &:active {
+        background-color: $tmo-gray05;
+      }
+    }
+  }
+
+  &.mat-accent {
+    &:hover:not([disabled]) {
+      background-color: $tmo-magenta-dark;
+    }
+
+    &:focus,
+    &:active {
+      background-color: $tmo-magenta-very-dark;
+    }
+  }
+}
+
+.mat-stroked-button {
+  &.mat-primary {
+    border-color: $tmo-black;
+
+    &:hover:not([disabled]) {
+      background-color: rgba($tmo-white, 0.2);
+    }
+
+    &:focus,
+    &:active {
+      background-color: rgba($tmo-white, 0.5);
+    }
+  }
+
+  &.mat-accent {
+    border-color: $tmo-magenta-brand;
+
+    &:hover:not([disabled]) {
+      background-color: rgba($tmo-magenta-light, 0.1);
+    }
+
+    &:focus,
+    &:active {
+      background-color: rgba($tmo-magenta-light, 0.5);
+    }
+  }
+}
+
+.button-row {
+  a,
+  button {
+    margin-right: $spacing-xs;
+  }
+}
+
+p + .button-row {
+  margin-top: $spacing-sm;
+}

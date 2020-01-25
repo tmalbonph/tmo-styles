@@ -1,0 +1,33 @@
+@import '../sass-utilities';
+
+// Desktop/tablet spacing
+$spacing-3xs: rem(4px);
+$spacing-xxs: rem(8px);
+$spacing-xs: rem(16px);
+$spacing-sm: rem(24px);
+$spacing-med: rem(40px);
+$spacing-lg: rem(56px);
+$spacing-xl: rem(80px);
+$spacing-xxl: rem(120px);
+
+$spacing: (
+  '3xs': $spacing-3xs,
+  'xxs': $spacing-xxs,
+  'xs': $spacing-xs,
+  'sm': $spacing-sm,
+  'med': $spacing-med,
+  'lg': $spacing-lg,
+  'xl': $spacing-xl,
+  'xxl': $spacing-xxl
+);
+
+// Mobile spacing
+$spacing-mobile-lg: rem(40px);
+$spacing-mobile-xl: rem(56px);
+$spacing-mobile-xxl: rem(80px);
+
+$spacing-mobile: (
+  'lg': $spacing-mobile-lg,
+  'xl': $spacing-mobile-xl,
+  'xxl': $spacing-mobile-xxl
+);

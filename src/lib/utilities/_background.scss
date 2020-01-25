@@ -1,0 +1,22 @@
+@import '../variables';
+
+// Background color utilities
+@each $map in $brand-colors, $gray-colors, $ui-colors {
+  @each $name, $hex in $map {
+    .bg-#{$name} {
+      background-color: $hex !important;
+    }
+  }
+}
+
+.text-light {
+  color: $default-light-text-color !important;
+}
+
+.text-dark {
+  color: $default-text-color !important;
+}
+
+.no-shadow {
+  box-shadow: none !important;
+}

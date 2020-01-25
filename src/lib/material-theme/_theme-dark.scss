@@ -1,0 +1,25 @@
+// This theme definition does NOT include mat-core styles. It may be included in
+// addition to the default (light) theme.
+
+@import '~@angular/material/theming';
+
+// App-specific imports
+@import 'theme-color-palette';
+@import '../variables';
+
+// Primary colors are derived from opposite ends of the same neutral (gray) color set
+$primary-light: mat-palette($mat-tmo-neutral, 50, 50, 100);
+
+// Magenta is the accent color for both themes
+$accent: mat-palette($mat-tmo-magenta, 500, 300, 800);
+
+// Red is the warning color for both themes
+$warn: mat-palette($mat-red);
+
+$dark-theme: mat-dark-theme($primary-light, $accent, $warn);
+
+.tmo-dark-theme {
+  @include angular-material-theme($dark-theme);
+  background-color: $tmo-black;
+  color: $default-light-text-color;
+}

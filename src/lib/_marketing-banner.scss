@@ -1,0 +1,20 @@
+@import 'variables';
+
+.marketing-banner {
+  background-color: $tmo-magenta-brand;
+  color: $default-light-text-color;
+
+  a {
+    color: $default-light-text-color;
+    text-decoration: underline;
+    padding: 2px 8px;
+    border-radius: 3px;
+    border-bottom-width: 0;
+
+    &:hover {
+      color: $tmo-magenta-brand;
+      background-color: $default-light-text-color;
+      text-decoration: none;
+    }
+  }
+}

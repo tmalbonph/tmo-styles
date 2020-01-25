@@ -1,0 +1,40 @@
+@import 'variables';
+@import 'config/blueprint-css-grid';
+
+@import '~blueprint-css/src/blueprint';
+@import '~blueprint-css/src/fallback/blueprint';
+
+[tmo-layout~='grid'] {
+  @include for-tablet-down {
+    grid-gap: $spacing-xxs;
+  }
+}
+
+.page-container,
+[tmo-layout~='container'] {
+  display: block;
+  position: relative;
+  transition: margin 0.3s, max-width 0.3s;
+  width: auto;
+
+  @include for-phone-only {
+    margin: 0 $spacing-xs;
+  }
+
+  @include for-tablet-up {
+    margin: 0 $spacing-med;
+  }
+
+  @include for-desktop-sm-up {
+    margin: 0 $spacing-lg;
+  }
+
+  @include for-desktop-sm-up {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  @include for-desktop-up {
+    max-width: 1164px;
+  }
+}

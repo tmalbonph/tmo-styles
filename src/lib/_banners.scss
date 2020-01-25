@@ -1,0 +1,53 @@
+@import 'variables';
+
+.banner {
+  background-color: $tmo-gray10;
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  position: relative;
+  margin-bottom: 1rem;
+
+  &.banner-primary {
+    background-color: $tmo-black;
+    color: $tmo-white;
+  }
+
+  &.banner-accent {
+    background-color: $tmo-magenta-brand;
+    color: $tmo-white;
+  }
+
+  &.banner-error {
+    background-color: $tmo-red;
+    color: $tmo-white;
+  }
+
+  .banner-content {
+    flex-grow: 1;
+
+    @include for-desktop-up {
+      text-align: center;
+    }
+  }
+
+  $close-button-width: 25px;
+
+  .close-banner-button {
+    width: $close-button-width;
+    height: $close-button-width;
+    line-height: $close-button-width;
+    margin-left: 1rem;
+
+    .mat-button-wrapper {
+      line-height: inherit;
+    }
+  }
+
+  .cta-button {
+    height: auto;
+    line-height: inherit;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+}

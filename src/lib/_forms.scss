@@ -1,0 +1,207 @@
+@import 'variables';
+
+input,
+.mat-input-element {
+  caret-color: $tmo-magenta-brand;
+}
+
+.mat-form-field {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.form-field {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+// Text input labels are gray and bold...
+.mat-form-field.mat-focused .mat-form-field-label,
+.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+.mat-form-field-can-float
+  .mat-input-server:focus
+  + .mat-form-field-label-wrapper
+  .mat-form-field-label {
+  color: $tmo-gray60;
+  font-weight: bold;
+}
+
+// ...but when they're invalid, they should be red
+.mat-form-field-invalid {
+  &.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+  &.mat-form-field-can-float
+    .mat-input-server:focus
+    + .mat-form-field-label-wrapper
+    .mat-form-field-label {
+    color: $tmo-red;
+  }
+}
+
+.mat-form-field-label {
+  color: $default-text-color;
+}
+
+// Disabled
+.mat-form-field-disabled .mat-form-field-label {
+  color: $disabled-text-color;
+}
+
+.mat-hint {
+  color: $default-text-color;
+  font-size: rem(12px);
+}
+
+// Select panel has no border radius
+div.mat-select-panel {
+  border-radius: 0;
+}
+
+.mat-radio-button,
+.mat-checkbox,
+.mat-slide-toggle {
+  margin-right: 2rem;
+}
+
+// Checkbox & radio input have magenta border on hover
+.cdk-focused {
+  .mat-checkbox-frame,
+  .mat-radio-outer-circle {
+    border-color: $tmo-magenta-dark;
+  }
+}
+
+// Checkbox input has magenta border on hover
+.mat-checkbox:not(.mat-checkbox-disabled):hover .mat-checkbox-frame {
+  border-color: $tmo-magenta-brand;
+}
+
+.mat-checkbox-disabled:hover .mat-ripple {
+  display: none;
+}
+
+// Radio input has magenta border on hover
+.mat-radio-button:not(.mat-radio-disabled):hover .mat-radio-outer-circle {
+  border-color: $tmo-magenta-brand;
+}
+
+// Needed to properly size autocomplete results
+.mat-option {
+  font-size: $base-font-size;
+}
+
+// Select option has magenta background on hover
+.mat-option:hover,
+.mat-option:focus {
+  &:not(.mat-option-disabled) {
+    background-color: $tmo-magenta-brand;
+    color: $tmo-white;
+  }
+}
+
+// Disabled radio buttons and checkbox styles
+.mat-radio-button.mat-radio-disabled.mat-radio-checked .mat-radio-outer-circle,
+.mat-radio-button.mat-radio-disabled .mat-radio-outer-circle,
+.mat-checkbox-disabled .mat-checkbox-frame,
+.mat-checkbox-disabled:not(.mat-checkbox-checked) .mat-checkbox-frame {
+  border-color: $tmo-gray30;
+  background-color: rgba($tmo-gray10, 0.3);
+}
+
+.mat-radio-button.mat-radio-disabled.mat-radio-checked .mat-radio-inner-circle {
+  background-color: $tmo-gray30;
+}
+
+.mat-checkbox-disabled .mat-checkbox-label {
+  color: rgba(0, 0, 0, 0.38);
+}
+
+// Disabled slide toggle style
+body .mat-slide-toggle.mat-disabled {
+  opacity: 1;
+
+  .mat-slide-toggle-bar {
+    background-color: $tmo-gray70;
+  }
+
+  .mat-slide-toggle-thumb {
+    background-color: $tmo-gray40;
+  }
+
+  .mat-slide-toggle-content {
+    opacity: 0.38;
+  }
+}
+
+// Restricted style (in Material, we use the "fill" appearance)
+.mat-form-field-appearance-fill {
+  .mat-form-field-flex {
+    border-radius: 0 !important;
+    background-color: $tmo-white;
+
+    @include for-dark-theme {
+      background-color: $tmo-gray85;
+    }
+  }
+
+  // Dark theme only - lighten background color on hover, focus
+
+  &.mat-focused,
+  :hover {
+    .mat-form-field-flex {
+      @include for-dark-theme {
+        background-color: $tmo-gray70;
+        transition: background-color 0.3s ease-out;
+      }
+    }
+  }
+}
+
+// Datepicker modifications
+.mat-calendar-period-button,
+.mat-calendar-body-label {
+  color: $default-text-color;
+  font-size: $small-font-size;
+  font-weight: bold;
+}
+
+.mat-calendar-arrow {
+  color: $default-text-color;
+}
+
+.mat-calendar-body-today.mat-calendar-body-selected {
+  box-shadow: none;
+}
+
+.mat-calendar-body-cell .mat-calendar-body-cell-content {
+  border-radius: 0;
+}
+
+.mat-calendar-body-selected {
+  background-color: $tmo-magenta-brand;
+}
+
+// Dark theme modifications
+.tmo-dark-theme {
+  .mat-slide-toggle-thumb {
+    background-color: $tmo-gray05;
+  }
+
+  .mat-checkbox-checkmark {
+    fill: $tmo-white;
+  }
+
+  .mat-checkbox-checkmark-path {
+    stroke: $tmo-white !important;
+  }
+
+  // Slide toggle is magenta when in selected state
+  .mat-slide-toggle.mat-checked {
+    .mat-slide-toggle-thumb {
+      background-color: $tmo-magenta-brand;
+    }
+
+    .mat-slide-toggle-bar {
+      background-color: rgba($tmo-magenta-brand, 0.5);
+    }
+  }
+}

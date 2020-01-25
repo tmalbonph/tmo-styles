@@ -1,0 +1,58 @@
+.tmo-table-grid {
+  display: grid;
+}
+
+.tmo-accordion-table-container-background {
+  background-color: $tmo-white;
+}
+
+.header-main {
+  font-weight: bold;
+  line-height: 24px;
+  font-size: $base-font-size;
+}
+
+.header-main-center {
+  font-weight: bold;
+  line-height: 24px;
+  font-size: $base-font-size;
+  text-align: center;
+}
+
+.header-main-descr {
+  font-size: $legal-font-size;
+  line-height: 12px;
+  color: #262626;
+}
+
+.header-main-descr-center {
+  font-size: $legal-font-size;
+  line-height: 12px;
+  color: #262626;
+  text-align: center;
+}
+
+.header-panel {
+  font-weight: bold;
+  line-height: 24px;
+  font-size: $base-font-size;
+}
+.header-panel-center {
+  font-weight: bold;
+  line-height: 24px;
+  font-size: $base-font-size;
+  text-align: center;
+}
+
+.content {
+  line-height: 24px;
+  font-size: $base-font-size;
+  color: $tmo-gray85;
+}
+.content-center {
+  font-weight: normal;
+  line-height: 24px;
+  font-size: $base-font-size;
+  color: $tmo-gray85;
+  text-align: center;
+}

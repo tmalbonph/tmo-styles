@@ -1,0 +1,48 @@
+// TMO Material Design Color Maps
+// You can see a rough estimation of how these colors will
+// applied using this tool:  https://material.io/tools/color
+
+@import '../variables';
+
+$dark-text-color: $default-text-color;
+$light-text-color: $default-light-text-color;
+
+$mat-tmo-neutral: (
+  50: $tmo-gray05,
+  100: $tmo-gray10,
+  200: $tmo-gray20,
+  300: $tmo-gray30,
+  400: $tmo-gray40,
+  500: $tmo-gray60,
+  600: $tmo-gray70,
+  700: $tmo-gray80,
+  800: $tmo-gray85,
+  900: $tmo-black,
+  contrast: (
+    50: $dark-text-color,
+    100: $dark-text-color,
+    200: $dark-text-color,
+    300: $dark-text-color,
+    400: $dark-text-color,
+    500: $light-text-color,
+    600: $light-text-color,
+    700: $light-text-color,
+    800: $light-text-color,
+    900: $light-text-color
+  )
+);
+
+$mat-tmo-magenta: (
+  200: $tmo-magenta-light,
+  300: $tmo-magenta-light,
+  500: $tmo-magenta-brand,
+  800: $tmo-magenta-dark,
+  900: $tmo-magenta-very-dark,
+  contrast: (
+    200: $dark-text-color,
+    300: $dark-text-color,
+    500: $light-text-color,
+    800: $light-text-color,
+    900: $light-text-color
+  )
+);

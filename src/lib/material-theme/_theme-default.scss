@@ -1,0 +1,19 @@
+@import '~@angular/material/theming';
+
+// App-specific imports
+@import 'theme-color-palette';
+@import '../variables';
+
+// Primary colors are derived from opposite ends of the same neutral (gray) color set
+$primary-dark: mat-palette($mat-tmo-neutral, 800, 700, 900);
+
+// Magenta is the accent color for both themes
+$accent: mat-palette($mat-tmo-magenta, 500, 300, 800);
+
+// Red is the warning color for both themes
+$warn: mat-palette($mat-red);
+
+$theme: mat-light-theme($primary-dark, $accent, $warn);
+
+// Light theme (default)
+@include angular-material-theme($theme);

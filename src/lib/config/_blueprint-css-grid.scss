@@ -1,0 +1,24 @@
+@import '../variables';
+
+/*
+ * Configuration for Blueprint CSS
+ * All the options: https://github.com/coryrylan/blueprint-css/blob/master/lib/src/_config.scss
+ */
+
+// Prefixes
+$prefix: 'tmo-layout';
+
+// Grid Variables
+$gutter: $spacing-sm;
+
+// Breakpoint Variables
+$sm-break: $mobile-min;
+$md-break: $tablet-min;
+$lg-break: $desktop-sm-min;
+$xl-break: $desktop-min;
+
+// Spacing Variables
+$xs-spacing: $spacing-xs;
+$sm-spacing: $spacing-sm;
+$md-spacing: $spacing-med;
+$lg-spacing: $spacing-lg;

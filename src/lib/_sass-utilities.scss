@@ -1,0 +1,28 @@
+@import 'config/base-font-size';
+
+// Translate px units to rem. This is helpful for preserving the
+// original units specified in the sticker sheet.
+@function rem($pixels, $context: $base-font-size) {
+  @return #{$pixels/$context}rem;
+}
+
+// icon utilities
+%material-icons {
+  direction: ltr;
+  display: inline-block;
+  // 'san-serif' added here because linting requires a fallback. Would prefer a
+  // solution like: https://github.com/stylelint/stylelint/issues/3288
+  font-family: 'Material Icons', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+%material-icons-outlined {
+  @extend %material-icons;
+  font-family: 'Material Icons Outlined', sans-serif;
+}

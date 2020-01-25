@@ -1,0 +1,70 @@
+// Color variables and mixins
+// To prevent duplicated compiled CSS,
+// do NOT include functions/classes in this file.
+
+// Brand colors
+$tmo-magenta-brand: #e20074;
+$tmo-magenta-light: #f66db3;
+$tmo-magenta-dark: #ba0060;
+$tmo-magenta-very-dark: #a10053;
+$tmo-yellow-brand: #ffce0a;
+
+$brand-colors: (
+  'tmo-magenta-brand': $tmo-magenta-brand,
+  'tmo-magenta-light': $tmo-magenta-light,
+  'tmo-magenta-dark': $tmo-magenta-dark,
+  'tmo-magenta-very-dark': $tmo-magenta-very-dark,
+  'tmo-yellow-brand': $tmo-yellow-brand
+);
+
+// Grays
+$tmo-gray05: #f8f8f8;
+$tmo-gray10: #f2f2f2;
+$tmo-gray20: #e8e8e8;
+$tmo-gray30: #cccccc;
+$tmo-gray40: #9b9b9b;
+$tmo-gray60: #6a6a6a;
+$tmo-gray70: #4c4c4c;
+$tmo-gray80: #333333;
+$tmo-gray85: #262626;
+
+$gray-colors: (
+  'tmo-gray05': $tmo-gray05,
+  'tmo-gray10': $tmo-gray10,
+  'tmo-gray20': $tmo-gray20,
+  'tmo-gray30': $tmo-gray30,
+  'tmo-gray40': $tmo-gray40,
+  'tmo-gray60': $tmo-gray60,
+  'tmo-gray70': $tmo-gray70,
+  'tmo-gray80': $tmo-gray80,
+  'tmo-gray85': $tmo-gray85
+);
+
+// UI
+$tmo-black: #000000;
+$tmo-white: #ffffff;
+$tmo-green: #078a14;
+$tmo-green-light: #51d85e;
+$tmo-red: #e8200d;
+$tmo-yellow: #e3b721;
+
+$ui-colors: (
+  'tmo-black': $tmo-black,
+  'tmo-white': $tmo-white,
+  'tmo-green': $tmo-green,
+  'tmo-green-light': $tmo-green-light,
+  'tmo-red': $tmo-red,
+  'tmo-yellow': $tmo-yellow
+);
+
+// Color aliases
+$default-text-color: $tmo-gray85;
+$disabled-text-color: $tmo-gray60;
+$default-light-text-color: $tmo-white;
+
+// For styles with a dark theme variant, use this mixin.
+@mixin for-dark-theme {
+  .tmo-dark-theme & {
+    @content;
+  }
+}

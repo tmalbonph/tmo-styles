@@ -1,0 +1,22 @@
+@import 'variables';
+
+.mat-toolbar {
+  font-family: $body-font;
+  letter-spacing: normal;
+  font-size: $base-font-size;
+  font-weight: 700;
+  min-height: 72px;
+  padding: 0 2rem;
+
+  &.mat-toolbar-light {
+    background-color: $tmo-white;
+  }
+
+  .mat-button {
+    padding: 0;
+  }
+}
+
+.toolbar-buffer {
+  flex: 1 1 auto;
+}

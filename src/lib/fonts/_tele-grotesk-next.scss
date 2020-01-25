@@ -1,0 +1,41 @@
+$font-path: '../../../../apps/style-guide/client/src/assets/fonts';
+
+/* Tele-Grotesk-Next-Medium (400) */
+@font-face {
+  font-family: Tele-Grotesk-Next;
+  src: url('#{$font-path}/TeleGroteskNext-Medium.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Tele-Grotesk-Next-Medium-Italic (400) */
+@font-face {
+  font-family: Tele-Grotesk-Next;
+  src: url('#{$font-path}/TeleGroteskNext-MediumItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Tele-Grotesk-Next-Bold (700) */
+@font-face {
+  font-family: Tele-Grotesk-Next;
+  src: url('#{$font-path}/TeleGroteskNext-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Tele-Grotesk-Next-Bold-Italic (700) */
+@font-face {
+  font-family: Tele-Grotesk-Next;
+  src: url('#{$font-path}/TeleGroteskNext-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Tele-Grotesk-Next-Ultra (800) */
+@font-face {
+  font-family: Tele-Grotesk-Next;
+  src: url('#{$font-path}/TeleGroteskNext-Ultra.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}

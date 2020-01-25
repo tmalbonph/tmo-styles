@@ -1,0 +1,34 @@
+.mat-tab-group {
+  // By default, Material makes inactive tab labels transparent
+  .mat-tab-label {
+    opacity: 1;
+
+    // All tabs labels are bold
+    .mat-tab-label-content {
+      font-weight: bold;
+
+      @include for-dark-theme {
+        color: $tmo-white;
+      }
+    }
+
+    &.mat-tab-label-active .mat-tab-label-content {
+      color: $tmo-magenta-brand;
+
+      @include for-dark-theme {
+        color: $tmo-white;
+      }
+    }
+  }
+
+  // Border under all tab labels is gray
+  .mat-tab-nav-bar,
+  .mat-tab-header {
+    border-color: $tmo-gray30;
+  }
+
+  // Border under active tab is heavier
+  .mat-ink-bar {
+    height: $heavy-border-width;
+  }
+}

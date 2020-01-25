@@ -1,0 +1,17 @@
+@import 'variables';
+
+.mat-divider {
+  border-top-color: $tmo-gray20;
+
+  @include for-dark-theme {
+    border-top-color: $tmo-gray20;
+  }
+
+  &.divider-heavy {
+    border-width: 3px;
+  }
+
+  &.with-margin {
+    margin: 2rem 0;
+  }
+}

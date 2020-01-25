@@ -1,0 +1,133 @@
+@import '../variables';
+
+$spacing-properties: 'margin', 'padding';
+
+@each $prop in $spacing-properties {
+  @each $name, $size in $spacing {
+    .#{$prop}-#{$name} {
+      #{$prop}: $size;
+    }
+
+    .#{$prop}-left-#{$name} {
+      #{$prop}-left: $size;
+    }
+
+    .#{$prop}-right-#{$name} {
+      #{$prop}-right: $size;
+    }
+
+    .#{$prop}-top-#{$name} {
+      #{$prop}-top: $size;
+    }
+
+    .#{$prop}-bottom-#{$name} {
+      #{$prop}-bottom: $size;
+    }
+
+    .#{$prop}-horizontal-#{$name} {
+      #{$prop}-left: $size;
+      #{$prop}-right: $size;
+    }
+
+    .#{$prop}-vertical-#{$name} {
+      #{$prop}-top: $size;
+      #{$prop}-bottom: $size;
+    }
+  }
+
+  @include for-phone-only {
+    @each $name, $size in $spacing-mobile {
+      .#{$prop}-#{$name} {
+        #{$prop}: $size;
+      }
+
+      .#{$prop}-left-#{$name} {
+        #{$prop}-left: $size;
+      }
+
+      .#{$prop}-right-#{$name} {
+        #{$prop}-right: $size;
+      }
+
+      .#{$prop}-top-#{$name} {
+        #{$prop}-top: $size;
+      }
+
+      .#{$prop}-bottom-#{$name} {
+        #{$prop}-bottom: $size;
+      }
+
+      .#{$prop}-horizontal-#{$name} {
+        #{$prop}-left: $size;
+        #{$prop}-right: $size;
+      }
+
+      .#{$prop}-vertical-#{$name} {
+        #{$prop}-top: $size;
+        #{$prop}-bottom: $size;
+      }
+    }
+  }
+}
+
+/*** Margin reset ***/
+.margin-0 {
+  margin: 0 !important;
+}
+
+.margin-left-0 {
+  margin-left: 0 !important;
+}
+
+.margin-right-0 {
+  margin-right: 0 !important;
+}
+
+.margin-top-0 {
+  margin-top: 0 !important;
+}
+
+.margin-bottom-0 {
+  margin-bottom: 0 !important;
+}
+
+.margin-horizontal-0 {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.margin-vertical-0 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/*** Padding reset ***/
+.padding-0 {
+  padding: 0 !important;
+}
+
+.padding-left-0 {
+  padding-left: 0 !important;
+}
+
+.padding-right-0 {
+  padding-right: 0 !important;
+}
+
+.padding-top-0 {
+  padding-top: 0 !important;
+}
+
+.padding-bottom-0 {
+  padding-bottom: 0 !important;
+}
+
+.padding-horizontal-0 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.padding-vertical-0 {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}

@@ -1,0 +1,33 @@
+@import 'variables';
+
+.mat-dialog-container {
+  border-radius: 0;
+  padding: 0;
+  position: relative;
+}
+
+.close-modal-button {
+  position: absolute;
+  right: $spacing-xs;
+  top: $spacing-xs;
+}
+
+.modal {
+  .mat-dialog-container {
+    width: 969px;
+
+    /** At phone sizes, the modal covers the entire screen */
+    @include for-phone-only {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      max-width: 100%;
+    }
+  }
+}
+
+.modal-content {
+  padding: $spacing-med;
+}

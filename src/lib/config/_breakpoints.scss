@@ -1,0 +1,54 @@
+// Breakpoints
+$desktop-xl-min: 1680px;
+$desktop-min: 1280px;
+$desktop-sm-min: 1024px;
+$tablet-min: 768px;
+$mobile-min: 320px;
+
+@mixin for-phone-only {
+  @media (max-width: $tablet-min - 1) {
+    @content;
+  }
+}
+
+@mixin for-tablet-down {
+  @media (max-width: $desktop-sm-min - 1) {
+    @content;
+  }
+}
+
+@mixin for-desktop-sm-down {
+  @media (max-width: $desktop-min - 1) {
+    @content;
+  }
+}
+
+@mixin for-desktop-down {
+  @media (max-width: $desktop-xl-min - 1) {
+    @content;
+  }
+}
+
+@mixin for-tablet-up {
+  @media (min-width: $tablet-min) {
+    @content;
+  }
+}
+
+@mixin for-desktop-sm-up {
+  @media (min-width: $desktop-sm-min) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: $desktop-min) {
+    @content;
+  }
+}
+
+@mixin for-desktop-xl-only {
+  @media (min-width: $desktop-xl-min) {
+    @content;
+  }
+}
